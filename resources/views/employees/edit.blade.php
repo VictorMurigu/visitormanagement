@@ -11,7 +11,7 @@
             <div class="card">
                 <div class="card-header">
                     <h4> Edit Employee
-                        <a href="{{url('employees')}}" class='btn btn-primary float-end'>Back</a>
+                        <a href="{{url('employees')}}" class='btn btn-primary btn-sm float-end'>Back</a>
                     </h4>
                 </div>
                 <div class="card-body">
@@ -20,9 +20,9 @@
                         @method('PUT')
                         <div class="mb-3">
                             <label>Employee_PJ</label>
-                            <input type="text" class='form-control' name='employee_pj'
-                                value={{$employee->employee_pj}}>
-                            @error('employee_pj')
+                            <input type="text" class='form-control' name='pj'
+                                value={{$employee->pj}}>
+                            @error('pj')
                             <span class='text-danger'>{{$message}}</span>
                             @enderror
                         </div>
@@ -56,7 +56,7 @@
                             @enderror
                         </div>
                         <div class="mb-3">
-                            <button type='submit' class='btn btn-primary'>UPDATE</button>
+                            <button type='submit' class='btn btn-primary btn-sm'>UPDATE</button>
                         </div>
                     </form>
                 </div>

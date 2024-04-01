@@ -15,16 +15,16 @@
         @endauth
     </div>
     @endif
-
-    <div class="content">
-        <div class="title m-b-md">
+<div class="content center">
+    <div class="d-flex justify-content-center align-items-center">
+        <div class="title">
             <img src="/img/judiciary-img1.png" alt=""><br />
-            <p>Loading...</p>
         </div>
-        <div>
-            {{-- <h4 class='mssg'>{{ session('mssg') }}</h4> --}}
-        </div>
-        <a href="{{url('visitors')}}">Approve visitor</a>
     </div>
+    <div>
+        {{-- <h4 class='mssg'>{{ session('mssg') }}</h4> --}}
+    </div>
+
+</div>
 </div>
 @endsection

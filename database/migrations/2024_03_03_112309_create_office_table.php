@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('office', function (Blueprint $table) {
             $table->id();
             $table->string('office_name');
-            $table->string('room_no');
+            $table->integer('room_no');
             $table->string('building');
             $table->timestamps();
         });

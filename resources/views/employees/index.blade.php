@@ -14,7 +14,7 @@
             <form action="{{url('/search')}}" class="form-inline my-2 my-lg-0 float-end"
                 style='display:flex;width:330px' type="get">
                 <input type="search" class="form-control" name='query' placeholder="search...">
-                <button type="submit" class="btn btn-primary  float-end">search</button>
+                <button type="submit" class="btn btn-primary btn-sm  float-end">search</button>
             </form>
         </div>
     </div>
@@ -30,7 +30,7 @@
                 <div class="col col-md-8">Employee Management
                 </div>
                 <div class="col col-md-2">
-                    <a href="{{url('employees/create')}}" class='btn btn-success float-end'>Add Employee</a>
+                    <a href="{{url('employees/create')}}" class='btn btn-success btn-sm float-end'>Add Employee</a>
                 </div>
             </div>
         </div>
@@ -39,7 +39,7 @@
                 <table class="table table-bordered table-striped" id="visitor_table">
                     <thead>
                         <tr>
-                            <th>Employee PJ</th>
+                            <th>PJ</th>
                             <th>Employee Name</th>
                             <th>Employee Tel</th>
                             <th>Employee Email</th>
@@ -50,16 +50,16 @@
                     <tbody>
                         @foreach ($employee as $employee )
                         <tr>
-                            <td>{{$employee->employee_pj}}</td>
+                            <td>{{$employee->pj}}</td>
                             <td>{{$employee->employee_name}}</td>
                             <td>{{$employee->employee_tel}}</td>
                             <td>{{$employee->employee_email}}</td>
                             <td>{{$employee->employee_department}}</td>
                             <td>
-                                <a href="{{url('employees/'.$employee->id.'/edit')}}" class='btn btn-success'>Edit</a>
+                                <a href="{{url('employees/'.$employee->id.'/edit')}}" class='btn btn-sm btn-success'>Edit</a>
                                 <a href="{{url('employees/'.$employee->id.'/delete')}}"
                                     onclick="confirm('Are you sure you want to delete office')"
-                                    class='btn btn-danger'>Delete</a>
+                                    class='btn btn-sm btn-danger'>Delete</a>
                             </td>
                         </tr>
                         @endforeach

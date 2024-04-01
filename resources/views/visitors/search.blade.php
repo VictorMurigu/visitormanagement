@@ -29,9 +29,9 @@
                 @endif
             <td>{{$visitor->visitor_enter_by}}</td>
             <td>
-                <a href="{{url('visitors/'.$visitor->id.'/edit')}}" class='btn btn-success'>Edit</a>
+                <a href="{{url('visitors/'.$visitor->id.'/edit')}}" class='btn btn-success btn-sm'>Edit</a>
                 <a href="{{url('visitors/'.$visitor->id.'/delete')}}"
-                    onclick="confirm('Are you sure you want to delete office')" class='btn btn-danger'>Delete</a>
+                    onclick="confirm('Are you sure you want to delete office')" class='btn btn-danger btn-sm'>Delete</a>
             </td>
         </tr>
 

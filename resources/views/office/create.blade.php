@@ -13,7 +13,7 @@
             <div class="card">
                 <div class="card-header">
                     <h4> Add Office
-                        <a href="{{url('office')}}" class='btn btn-primary float-end'>Back</a>
+                        <a href="{{url('office')}}" class='btn btn-primary btn-sm float-end'>Back</a>
                     </h4>
                 </div>
                 <div class="card-body">
@@ -42,7 +42,7 @@
                             @enderror
                         </div>
                         <div class="mb-3">
-                            <button type='submit' class='btn btn-primary' >SAVE</button>
+                            <button type='submit' class='btn btn-sm btn-primary' >SAVE</button>
                         </div>
 
                     </form>

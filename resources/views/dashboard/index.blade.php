@@ -1,6 +1,18 @@
 @extends('layout.layout')
 @section('content')
 
+<div class="content center">
+    <div class="d-flex justify-content-center align-items-center">
+        <div class="title">
+            <img src="/img/judiciary-img1.png" alt=""><br />
+        </div>
+    </div>
+    <div>
+        {{-- <h4 class='mssg'>{{ session('mssg') }}</h4> --}}
+    </div>
+
+</div>
+
 
 <div class="row">
     <div class="col-md-3">
@@ -30,16 +42,7 @@
 </div>
 
 
-<div class="content">
-    <div class="title m-b-md">
-        <img src="/img/judiciary-img1.png" alt=""><br />
-        <p>Loading...</p>
-    </div>
-    <div>
-        {{-- <h4 class='mssg'>{{ session('mssg') }}</h4> --}}
-    </div>
-    <a href="{{url('visitors')}}">Approve visitor</a>
-</div>
+
 
 @endsection
 

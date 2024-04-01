@@ -46,7 +46,7 @@
                                 </label>
                             </div> --}}
                             <div class="mb-3">
-                                <button type='submit' class='btn btn-primary'>SAVE</button>
+                                <button type='submit' class='btn btn-danger btn-sm'>Log Visitor Out</button>
                             </div>
 
                     </form>

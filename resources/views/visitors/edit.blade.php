@@ -13,7 +13,7 @@
             <div class="card">
                 <div class="card-header">
                     <h4> Edit Visitor
-                        <a href="{{url('visitors')}}" class='btn btn-primary float-end'>Back</a>
+                        <a href="{{url('visitors')}}" class='btn btn-primary btn-sm float-end'>Back</a>
                     </h4>
                 </div>
                 <div class="card-body">
@@ -29,18 +29,25 @@
                             @enderror
                         </div>
                         <div class="mb-3">
+                            <label>Visitor_id</label>
+                            <input type="text" class='form-control' name='visitor_id' value={{$visitor->visitor_id}}>
+                            @error('visitor_id')
+                            <span class='text-danger'>{{$message}}</span>
+                            @enderror
+                        </div>
+                        <div class="mb-3">
                             <label>Visitor_meet_person</label>
-                            <input type="text" class='form-control' name='visitor_meet_person'
-                                value={{$visitor->visitor_meet_person}}>
-                            @error('visitor_meet_person')
+                            <input type="text" class='form-control' name='host'
+                                value={{$visitor->host}}>
+                            @error('host')
                             <span class='text-danger'>{{$message}}</span>
                             @enderror
                         </div>
                         <div class="mb-3">
                             <label>Visitor Department</label>
-                            <input type="text" class='form-control' name='visitor_department'
-                                value={{$visitor->visitor_department}}>
-                            @error('visitor_department')
+                            <input type="text" class='form-control' name='host_department'
+                                value={{$visitor->host_department}}>
+                            @error('host')
                             <span class='text-danger'>{{$message}}</span>
                             @enderror
                         </div>
@@ -68,16 +75,9 @@
                             <span class='text-danger'>{{$message}}</span>
                             @enderror
                         </div>
+
                         <div class="mb-3">
-                            <label>Visitor_enter_by</label>
-                            <input type="text" class='form-control' name='visitor_enter_by'
-                                value={{$visitor->visitor_enter_by}}>
-                            @error('visitor_enter_by')
-                            <span class='text-danger'>{{$message}}</span>
-                            @enderror
-                        </div>
-                        <div class="mb-3">
-                            <button type='submit' class='btn btn-primary'>UPDATE</button>
+                            <button type='submit' class='btn btn-sm btn-primary'>UPDATE</button>
                         </div>
 
                     </form>

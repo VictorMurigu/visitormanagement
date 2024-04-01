@@ -9,7 +9,7 @@
         {{-- INLINE DISPLAY PROPERTY --}}
 
 
-       
+
 
 
 
@@ -27,15 +27,12 @@
                         <li class="nav-item">
                             <a class="nav-link text-bg-black" href="{{url('visitors')}}">Visitors</a>
                         </li>
-                        @if(Auth::user()->type=='Admin')
+                        @if(Auth::check() && Auth::user()->type=='Admin')
                         <li class="nav-item">
                             <a class="nav-link text-bg-black" href="{{url('office')}}">Offices</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-bg-black" href="{{url('employees')}}">Employees</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link disabled " aria-disabled="true">Disabled</a>
                         </li>
                         @endif
                     </ul>
@@ -44,14 +41,16 @@
 
             {{-- Right --}}
             <div class="collapse navbar-collapse" id="navbarNav">
-               <div class="text-black float-end">{{ Auth::user()->type }}</div>
+                @if (Auth::check())
+                    <div class="text-black float-end">{{ Auth::user()->type }}</div>
+                @endif
+
                 <ul class="navbar-nav">
                     @if(Auth::check())
                      <li class="nav-item ">
                         <a class="nav-link active text-bg-black " aria-current="page" href="{{url('login')}}">Logout</a>
                     </li>
                     @else
-
                     <li class="nav-item ">
                         <a class="nav-link active text-bg-black " aria-current="page" href="{{url('login')}}">Login</a>
                     </li>

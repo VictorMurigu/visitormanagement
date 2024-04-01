@@ -20,12 +20,13 @@ class EmployeesController extends Controller
     }
 
     public function create(){
-      return view('employees.create');
+         $employee=Employees::get();
+      return view('employees.create',compact('employee'));
     }
 
      public function search(Request $request){
         $search=$_GET['query'];
-        $employee=Employees::where('employee_pj','like',"%$search%")
+        $employee=Employees::where('pj','like',"%$search%")
         ->orWhere('employee_name','like',"%$search%")
         ->orWhere('employee_department','like',"%$search%")->get();
 
@@ -36,7 +37,7 @@ class EmployeesController extends Controller
 
     public function store(Request $request){
          $request->validate([
-            'employee_pj'=>'required|max:255',
+            'pj'=>'required|max:255',
             'employee_name'=>'required|max:255',
             'employee_tel'=>'required|max:255',
             'employee_email'=>'required',
@@ -44,7 +45,7 @@ class EmployeesController extends Controller
         ]);
 
         Employees::create([
-            'employee_pj'=>$request->employee_pj,
+            'pj'=>$request->pj,
             'employee_name'=>$request->employee_name,
             'employee_tel'=>$request->employee_tel,
             'employee_email'=>$request->employee_email,
@@ -62,7 +63,7 @@ class EmployeesController extends Controller
     public function update(Request $request,int $id){
 
          $request->validate([
-            'employee_pj'=>'required|max:255',
+            'pj'=>'required|max:255',
             'employee_name'=>'required|max:255',
             'employee_tel'=>'required|max:255',
             'employee_email'=>'required',
@@ -70,7 +71,7 @@ class EmployeesController extends Controller
         ]);
 
         Employees::findOrFail($id)->update([
-            'employee_pj'=>$request->employee_pj,
+            'pj'=>$request->pj,
             'employee_name'=>$request->employee_name,
             'employee_tel'=>$request->employee_tel,
             'employee_email'=>$request->employee_email,

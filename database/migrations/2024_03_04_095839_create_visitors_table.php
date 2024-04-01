@@ -14,8 +14,10 @@ return new class extends Migration
         Schema::create('visitors', function (Blueprint $table) {
             $table->id();
              $table->string('visitor_name');
-            $table->string('visitor_meet_person');
-            $table->string('visitor_department');
+             $table->string('visitor_id');
+            $table->string('host');
+            $table->string('host_department');
+            $table->string('visit_purpose');
             $table->string('visitor_enter_time');
             $table->string('visitor_out_time')->nullable();
             $table->boolean('visitor_status')->default(1);

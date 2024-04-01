@@ -11,8 +11,10 @@ class Visitor extends Model
     protected $table='visitors';
      protected $fillable = [
                 'visitor_name',
-                'visitor_meet_person',
-                'visitor_department',
+                'visitor_id',
+                'host',
+                'host_department',
+                'visit_purpose',
                 'visitor_enter_time',
                 'visitor_out_time',
                 'visitor_status',

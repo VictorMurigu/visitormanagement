@@ -13,7 +13,7 @@
             <div class="card">
                 <div class="card-header">
                     <h4> Add Employee
-                        <a href="{{url('employees')}}" class='btn btn-primary float-end'>Back</a>
+                        <a href="{{url('employees')}}" class='btn btn-sm btn-primary float-end'>Back</a>
                     </h4>
                 </div>
                 <div class="card-body">
@@ -22,8 +22,8 @@
 
                         <div class="mb-3">
                             <label>Employee_PJ</label>
-                            <input type="text" class='form-control' name='employee_pj' value={{old('employee_pj')}}>
-                            @error('employee_pj')
+                            <input type="text" class='form-control' name='pj' value={{old('pj')}}>
+                            @error('pj')
                             <span class='text-danger'>{{$message}}</span>
                             @enderror
                         </div>
@@ -58,7 +58,7 @@
                             @enderror
                         </div>
                         <div class="mb-3">
-                            <button type='submit' class='btn btn-primary'>SAVE</button>
+                            <button type='submit' class='btn btn-sm btn-primary'>SAVE</button>
                         </div>
 
                     </form>

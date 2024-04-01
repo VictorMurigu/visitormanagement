@@ -11,13 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('employees', function (Blueprint $table) {
+        Schema::create('visitpurpose', function (Blueprint $table) {
             $table->id();
-            $table->integer('pj')->unsigned()->nullable()->default(12);('pj');
-            $table->string('employee_name');
-            $table->integer('employee_tel');
-            $table->string('employee_email');
-            $table->string('employee_department');
+            $table->string('purpose_of_visit');
             $table->timestamps();
         });
     }
@@ -27,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('employees');
+        Schema::dropIfExists('visitpurpose');
     }
 };

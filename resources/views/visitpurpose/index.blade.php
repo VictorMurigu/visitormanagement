@@ -1,6 +1,6 @@
 @extends('layout.layout')
 @section('content')
-<div class="container  mt-3">
+<div class="container mt-3">
     <div class="row ">
         <div class="col-md-12">
 
@@ -8,10 +8,10 @@
             <div class="row">
                 <div class="">
                     <div class="card-header">
-                        <form action="{{url('/search')}}" class="form-inline my-2 my-lg-0 float-end"
+                        <form action="{{url('/search')}}" class="my-2 form-inline my-lg-0 float-end"
                             style='display:flex;width:330px' type="get">
                             <input type="search" class="form-control" name='query' placeholder="search...">
-                            <button type="submit" class="btn btn-success btn-sm  float-end">search</button>
+                            <button type="submit" class="btn btn-success btn-sm float-end">search</button>
                         </form>
                     </div>
                 </div>
@@ -20,8 +20,8 @@
 
             <div class="card">
                 <div class="card-header">
-                    <h4>Office
-                        <a href="{{url('office/create')}}" class='btn btn-primary btn-sm float-end'>Add Office</a>
+                    <h4>Purpose of Visit
+                        <a href="{{url('visitpurpose/create')}}" class='btn btn-primary btn-sm float-end'>Add Purpose</a>
                     </h4>
                 </div>
 
@@ -33,24 +33,23 @@
                             <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>OFFICE NAME</th>
-                                    <th>ROOM NO</th>
-                                    <th>BUILDING</th>
+                                    <th>Purpose of Visit</th>
                                     <th>Action</th>
 
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($office as $dep )
+                                @foreach ($visit_purpose as $purpose )
                                 <tr>
-                                    <td>{{$dep->id}}</td>
-                                    <td>{{$dep->office_name}}</td>
-                                    <td>{{$dep->room_no}}</td>
-                                    <td>{{$dep->building}}</td>
+                                    <td>{{$purpose->id}}</td>
+                                    <td>{{$purpose->purpose_of_visit}}</td>
+
                                     <td>
-                                        <a href="{{url('office/'.$dep->id.'/edit')}}" class='btn btn-sm btn-success' >Edit</a>
-                                        <a href="{{url('office/'.$dep->id.'/delete')}}" onclick="confirm('Are you sure you want to delete office')"
-                                             class='btn btn-sm btn-danger'>Delete</a>
+                                        <a href="{{url('visitpurpose/'.$purpose->id.'/edit')}}"
+                                            class='btn btn-sm btn-success'>Edit</a>
+                                        <a href="{{url('visitpurpose/'.$purpose->id.'/delete')}}"
+                                            onclick="confirm('Are you sure you want to delete office')"
+                                            class='btn btn-sm btn-danger'>Delete</a>
                                     </td>
                                 </tr>
 
@@ -67,5 +66,3 @@
 </div>
 
 @endsection
-
-

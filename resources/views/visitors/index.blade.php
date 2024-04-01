@@ -15,10 +15,10 @@
 <div class="row">
     <div class="">
         <div class="card-header">
-            <form action="{{url('visitors/search')}}" class="form-inline my-2 my-lg-0 float-end"
+            <form action="{{url('visitors/search')}}" class="my-2 form-inline my-lg-0 float-end"
                 style='display:flex;width:330px' type="get">
                 <input type="search" class="form-control" name='query' placeholder="search...">
-                <button type="submit" class="btn btn-primary  float-end">search</button>
+                <button type="submit" class="btn btn-primary btn-sm float-end">search</button>
             </form>
         </div>
     </div>
@@ -27,8 +27,8 @@
 
 
 
-{{-- <div class=" row ">
-    <div class="form-control float-right">
+{{-- <div class=" row">
+    <div class="float-right form-control">
         <div class="card-header">
             <form action="get" action="{{url('/search')}}">
                 <input type="search" class="form-control float-end" name="search" style='width:330px'
@@ -47,21 +47,23 @@
                 <div class="col col-md-8">Visitor Management
                 </div>
                 <div class="col col-md-2">
-                    <a href="{{url('visitors/create')}}" class='btn btn-success float-end'>Add Visitor</a>
+                    <a href="{{url('visitors/create')}}" class='btn btn-success btn-sm float-end'>Add Visitor</a>
                 </div>
             </div>
         </div>
         {{-- {{$timeCreated}} --}}
         <div class="card-body">
-            <div class="table-responsive  mt-5 ">
+            <div class="mt-5 table-responsive ">
                 <table class="table table-bordered table-striped" id="visitor_table">
                     <thead>
                         <tr>
                             <th>Visitor Name</th>
-                            <th>Visitor_Meet_Person_Name</th>
-                            <th>Department</th>
-                            <th>In Time</th>
-                            <th>Out Time</th>
+                            <th>Visitor ID</th>
+                            <th>Host</th>
+                            <th>Host Department</th>
+                            <th>Purpose of Visit </th>
+                            <th>Time In</th>
+                            <th>Time Out</th>
                             <th>Status</th>
                             <th>Enter By</th>
                             <th>Action</th>
@@ -71,23 +73,28 @@
                         @foreach ($visitor as $visitor )
                         <tr>
                             <td>{{$visitor->visitor_name}}</td>
-                            <td>{{$visitor->visitor_meet_person}}</td>
-                            <td>{{$visitor->visitor_department}}</td>
+                            <td>{{$visitor->visitor_id}}</td>
+                            <td>{{$visitor->host}}</td>
+                            <td>{{$visitor->host_department}}</td>
+                            <td>{{$visitor->visit_purpose}}</td>
                             <td>{{ $visitor->visitor_enter_time == '0000-00-00 00:00:00' ? 'n/a' : date('M j, Y, g:i a', strtotime($visitor->visitor_enter_time))}}</td>
                             <td>{{empty($visitor->visitor_out_time) ? '--' : date('M j, Y, g:i a', strtotime($visitor->visitor_out_time)) ?? 'n/a'}}</td>
                             <td>
                                 @if ($visitor->visitor_status)
-                                <button class='mx-2 my-2 btn btn-success ms-1 px-3'>IN</button>
+                                <button class=' btn btn-success btn-sm'>IN</button>
                                 @else
-                                <button class='  my-2 btn btn-danger ms-1 px-2'>OUT</button>
+                                <button class=' btn btn-danger btn-sm'>OUT</button>
                                 @endif
                             <td>{{$visitor->visitor_enter_by}}</td>
                             <td>
-                                <a href="{{url('visitors/'.$visitor->id.'/status')}}" class='btn btn-primary'>Status</a>
-                                <a href="{{url('visitors/'.$visitor->id.'/edit')}}" class='btn btn-success'>Edit</a>
+                                @if ($visitor->visitor_status)
+                              <a href="{{url('visitors/'.$visitor->id.'/status')}}" class='btn btn-success btn-sm'>Status</a>
+                                @endif
+
+                                <a href="{{url('visitors/'.$visitor->id.'/edit')}}" class='btn btn-primary btn-sm'>Edit</a>
                                 <a href="{{url('visitors/'.$visitor->id.'/delete')}}"
                                     onclick="confirm('Are you sure you want to delete office')"
-                                    class='btn btn-danger'>Delete</a>
+                                    class='btn btn-danger btn-sm'>Delete</a>
 
                             </td>
                         </tr>
